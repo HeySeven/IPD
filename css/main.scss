@@ -5,7 +5,7 @@
 body {
   background-color: #f7f7f7;
   -webkit-font-smoothing: antialiased;
-  font-family: PingFangSC-Regular,"Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-family: PingFangSC-Regular, "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
 }
 
 ol,
@@ -37,6 +37,8 @@ img {
 $color-danger: #E03C31;
 $color-success: #82B64A;
 $color-warning: #F9CF4B;
+$color-info: #3F94C9;
+$color-primary: #66C195;
 $color-normal: #333;
 $color-light: #666;
 $color-lighter: #999;
@@ -104,53 +106,61 @@ $color-lighter: #999;
 
 .btn-success {
   color: #fff;
-  background-color: #82B64A;
-  border-color: #82B64A
+  background-color: $color-success;
+  border-color: $color-success;
+  &.focus, &:focus, &:hover, &.active, &:active, &:active:focus {
+    color: #fff;
+    background-color: darken($color-success, 5);
+    border-color: darken($color-success, 5);
+  }
 }
 
-.btn-success.focus, .btn-success:focus {
+.btn-primary {
   color: #fff;
-  background-color: #71a23c;
-  border-color: #71a23c
+  background-color: $color-primary;
+  border-color: $color-primary;
+  &.focus, &:focus, &:hover, &.active, &:active, &:active:focus {
+    color: #fff;
+    background-color: darken($color-primary, 5);
+    border-color: darken($color-primary, 5);
+  }
 }
 
-.btn-success:hover {
+.btn-info {
   color: #fff;
-  background-color: #71a23c;
-  border-color: #71a23c
+  background-color: $color-info;
+  border-color: $color-info;
+  &.focus, &:focus, &:hover, &.active, &:active, &:active:focus {
+    color: #fff;
+    background-color: darken($color-info, 5);
+    border-color: darken($color-info, 5);
+  }
 }
 
-.btn-success.active, .btn-success:active, .open > .dropdown-toggle.btn-success {
+.btn-warning {
   color: #fff;
-  background-color: #71a23c;
-  border-color: #71a23c
+  background-color: $color-warning;
+  border-color: $color-warning;
+  &.focus, &:focus, &:hover, &.active, &:active, &:active:focus {
+    color: #fff;
+    background-color: darken($color-warning, 5);
+    border-color: darken($color-warning, 5);
+  }
 }
-
-.btn-success.active.focus, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active.focus, .btn-success:active:focus, .btn-success:active:hover, .open > .dropdown-toggle.btn-success.focus, .open > .dropdown-toggle.btn-success:focus, .open > .dropdown-toggle.btn-success:hover {
-  color: #fff;
-  background-color: #71a23c;
-  border-color: #71a23c
+.btn-outline{
+  border: 1px solid #E5E5E5;
 }
-
-.btn-success.active, .btn-success:active, .open > .dropdown-toggle.btn-success {
-  background-image: none
+.btn-ipd{
+  font-family: "PingFang SC";
+  padding: 8px 40px;
+  font-size: 16px;
 }
-
-.btn-success.disabled, .btn-success.disabled.active, .btn-success.disabled.focus, .btn-success.disabled:active, .btn-success.disabled:focus, .btn-success.disabled:hover, .btn-success[disabled], .btn-success[disabled].active, .btn-success[disabled].focus, .btn-success[disabled]:active, .btn-success[disabled]:focus, .btn-success[disabled]:hover, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success.active, fieldset[disabled] .btn-success.focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:hover {
-  background-color: #82B64A;
-  border-color: #82B64A
-}
-
-.btn-success .badge {
-  color: #82B64A;
-  background-color: #fff
-}
-
 /*commen style*/
 .mb-n {
   margin-bottom: 0 !important;
 }
-.tag-default{
+
+.tag-default {
   font-family: "PingFang SC";
   display: inline-block;
   vertical-align: middle;
@@ -162,6 +172,7 @@ $color-lighter: #999;
   @include border-radius(2px);
   margin-top: -2px;
 }
+
 .slide-bar {
   position: fixed;
   top: 0;
@@ -221,40 +232,43 @@ $color-lighter: #999;
   margin-bottom: 10px;
 }
 
-.project-media{
-  padding: 30px;
+.project-media {
+  padding: 20px 30px;
   min-height: 120px;
   @include clearfix();
-  .media-hd{
+  .media-hd {
     float: right;
     margin-left: 5px;
   }
 }
-.media-bd{
+
+.media-bd {
   overflow: hidden;
-  h2{
+  margin-top: 20px;
+  h2 {
     margin-top: 0;
     margin-bottom: 5px;
     font-size: 20px;
     font-weight: normal;
-    .tag-default{
+    .tag-default {
       margin-left: 10px;
     }
-    a{
+    a {
       color: $color-normal;
-      &:hover{
+      &:hover {
         color: $color-success;
       }
     }
   }
-  .media-ds{
+  .media-ds {
     font-size: 14px;
     color: $color-lighter;
   }
 }
-.circle{
+
+.circle {
   position: relative;
-  strong{
+  strong {
     position: absolute;
     top: 26px;
     left: 0;
@@ -263,7 +277,7 @@ $color-lighter: #999;
     line-height: 27px;
     font-size: 27px;
     font-weight: normal;
-    i{
+    i {
       font-style: normal;
       font-size: 0.6em;
       font-weight: normal;
@@ -271,16 +285,160 @@ $color-lighter: #999;
   }
 }
 
+.product-create {
+  padding: 50px 350px 50px 30px;
+  background: #fff url(../images/product-create.png) right bottom no-repeat;
+  h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: normal;
+    font-size: 35px;
+  }
+  p {
+    color: $color-lighter;
+  }
+  dl {
+    margin-top: 35px;
+    dt {
+      font-weight: normal;
+    }
+    dd {
+      @include clearfix();
+      .btn {
+        font-family: "PingFang SC";
+        float: left;
+        margin-top: 10px;
+        margin-right: 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 16px;
+        width: 150px;
+      }
+    }
+  }
+}
 
+.bread-nav {
+  margin-bottom: 10px;
+}
 
+.product-detail {
+  position: relative;
+  border-top: 1px solid #F7F7F7;
+  padding: 20px 30px 120px 65px;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: $color-success;
+  }
+}
 
+.detail-media {
+  position: relative;
+  padding: 15px 280px 15px 25px;
+  background-color: #f7f7f7;
+  @include border-radius(4px);
+  margin-bottom: 10px;
+  &:before {
+    content: "";
+    position: absolute;
+    left: -33px;
+    top: 0;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border: 4px solid $color-success;
+    @include border-radius(10px);
+  }
+  .status-box {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    i {
+      font-size: 30px;
+      color: $color-primary;
+    }
+  }
+  h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 12px;
+    color: $color-light;
+    & + p {
+      margin-top: 6px;
+    }
+  }
+}
 
+.project-form-wrap {
+  position: relative;
+  padding: 60px 150px 200px;
+  background: #fff url(../images/product-create.png) right bottom no-repeat;
+  h1{
+    margin-top: 0;
+    margin-bottom: 60px;
+  }
+  .form-group {
+    margin-bottom: 10px;
+  }
+  .form-control{
+    background: #F7F7F7;
+    @include border-radius(2px);
+    @include box-shadow(none);
+    font-size: 16px;
+    color: #999999;
+    height: 40px;
+    border: 0;
+  }
+  .help-block{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: $color-normal;
+  }
 
+}
 
-
-
-
-
+.ewm-model{
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, .85);
+  text-align: center;
+  dl{
+    position: absolute;
+    width: 212px;
+    top: 50%;
+    left: 50%;
+    margin-left: -106px;
+    margin-top: -122px;
+    dt{
+      img{
+        vertical-align: top;
+      }
+    }
+    dd{
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+  .model-cancel{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 40px;
+  }
+}
 
 
 
