@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>item-list-IPD</title>
+    <meta content="PMCAFF  IPD " name="keywords"/>
+    <meta content="PMCAFF  IPD " name="description"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="plugins/iconfont/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="plugins/circle-progress/circle-progress.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--IE7及以下版本提示升级-->
+    <!--[if lte IE 7]>
+    <script>window.location.href = 'http://cdn.dmeng.net/upgrade-your-browser.html?referrer=' + location.href;</script>
+    <![endif]-->
+</head>
+<body>
+<div class="slide-bar">
+    <div class="slide-logo-box">
+        <a class="slide-logo" href="#"></a>
+    </div>
+    <div class="slide-nav-box">
+        <ul class="slide-nav">
+            <li class="active"><a href="#">我的项目</a></li>
+            <li><a href="#">创建新项目</a></li>
+            <li><a href="#">PMCAFF社区</a></li>
+            <li><a href="#">意见反馈</a></li>
+        </ul>
+    </div>
+</div>
+<div class="main-wrap">
+    <div class="main-inner">
+        <div class="project-list">
+            <div class="panel-box project-media">
+                <div class="media-hd">
+                    <div class="circle" data-value="0.2">
+                        <strong>0%</strong>
+                    </div>
+                </div>
+                <div class="media-bd">
+                    <h2><a href="#">阿尔法</a><span class="tag-default">产品众测</span></h2>
+                    <div class="media-ds">
+                        项目创建时间：2016年7月15日
+                    </div>
+                </div>
+            </div>
+            <div class="panel-box project-media">
+                <div class="media-hd">
+                    <div class="circle" data-value="0.75">
+                        <strong>0%</strong>
+                    </div>
+                </div>
+                <div class="media-bd">
+                    <h2><a href="#">全球医来了</a><span class="tag-default">UI设计</span></h2>
+                    <div class="media-ds">
+                        项目创建时间：2016年7月15日
+                    </div>
+                </div>
+            </div>
+            <div class="panel-box project-media">
+                <div class="media-hd">
+                    <div class="circle" data-value="1.0">
+                        <strong>0%</strong>
+                    </div>
+                </div>
+                <div class="media-bd">
+                    <h2><a href="#">网红直播APP</a><span class="tag-default">产品文档</span></h2>
+                    <div class="media-ds">
+                        项目创建时间：2016年7月15日
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $('.circle').circleProgress({
+        size: 80,
+        thickness:8,
+        fill: {
+            gradient: ["#66C195", "#82B64A"]
+        }
+    }).on('circle-animation-progress', function(event, progress,stepValue) {
+        $(this).find('strong').html(parseInt(100 * stepValue) + '<i>%</i>');
+    });
+</script>
+</body>
+
+</html>
