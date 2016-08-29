@@ -1,4 +1,11 @@
 $(function() {
+
+    var $slideBar = $(".slide-bar");
+
+    $(".nav-control i").click(function(){
+        $slideBar.toggleClass("open");
+    });
+
     if( !('placeholder' in document.createElement('input')) ){
         $('input[placeholder],textarea[placeholder]').each(function(){
             var that = $(this),
